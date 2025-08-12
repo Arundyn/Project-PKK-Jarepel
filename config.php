@@ -1,12 +1,12 @@
 <?php
-$host = 'localhost';
-$user = 'root';
-$pass = '';
-$dbname = 'comments';
+$host = "localhost";
+$user = "root";
+$pass = "";
+$db   = "comments"; // ganti dengan nama database kamu
 
-$conn = new mysqli($host, $user, $pass, $dbname);
+$conn = mysqli_connect($host, $user, $pass, $db);
 
-if ($conn->connect_error) {
-    die("Koneksi gagal: " . $conn->connect_error);
+if (!$conn) {
+    die("Koneksi database gagal: " . mysqli_connect_error());
 }
 ?>
